@@ -7,7 +7,8 @@ public class Main {
     public static String coast = "ABCDABA";
     public static String coast1 = "BDCCCAAACCC";
     //public static String item = "ABCDABA";
-    public static String item = "  A   D";
+    public static String item = "CCCCCCCCCCCCCCCCCCCC";
+    //public static String item = "AAAAAACCCCCC";
 
     public static void main(String[] args) {
         new Fruit("A", 1.25d, 3.00d, 3.00d);
