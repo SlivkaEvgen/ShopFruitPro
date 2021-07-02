@@ -6,18 +6,18 @@ import java.util.*;
 
 @Data
 public class Goods {
-    static String box;
-    public String name;
-    int id;
+    protected static String box;
+    private String name;
+    private int id;
     private static int countId = 0;
-    double priceForOne;
-    double stockPrice;
-    static double totalPrice;
-    double stockAmount;
-    double amount;
-    public static Map<Integer, Goods> allGoods = new HashMap<>();
+    private double priceForOne;
+    private double stockPrice;
+    protected static double totalPrice;
+    private double stockAmount;
+    private double amount;
+    protected static Map<Integer, Goods> allGoods = new HashMap<>();
 
-    public Goods(String name, double priceForOne, double stockPrice, double stockAmount) {
+    Goods(String name, double priceForOne, double stockPrice, double stockAmount) {
         this.name = name;
         this.priceForOne = priceForOne;
         this.stockPrice = stockPrice;
@@ -30,13 +30,13 @@ public class Goods {
         }
     }
 
-    public static void getValidateName(String coast) {
+    private static void getValidateName(String coast) {
         totalPrice = 0.00d;
         box = coast;
         box = box.toUpperCase();
     }
 
-    public static void howMuch() {
+    private static void howMuch() {
         String[] items = box.split("");
         for (String item : items) {
             for (int j = 1; j < allGoods.values().size() + 1; j++) {
@@ -47,7 +47,7 @@ public class Goods {
         }
     }
 
-    public static void getTotalPrice() {
+    private static void getTotalPrice() {
         for (int i = 1; i < allGoods.size() + 1; i++) {
             double amount1 = allGoods.get(i).getAmount();
             double amountPro = allGoods.get(i).getStockAmount();
@@ -63,7 +63,7 @@ public class Goods {
         }
     }
 
-    public static void createNewCoasts() {
+    protected static void createNewCoasts() {
         for (int i = 1; i < allGoods.values().size() + 1; i++) {
             allGoods.get(i).setAmount(0.00d);
             totalPrice = 0.00d;
