@@ -9,7 +9,7 @@ public class Goods {
     protected static String box;
     private String name;
     private int id;
-    private static int countId = 0;
+    private int countId = 0;
     private double priceForOne;
     private double stockPrice;
     protected static double totalPrice;
@@ -24,8 +24,8 @@ public class Goods {
         this.stockAmount = stockAmount;
 
         if (this.name != null) {
-            countId++;
-            this.id = countId;
+            this.countId++;
+            this.id = this.countId;
             allGoods.put(this.id, this);
         }
     }
